@@ -63,8 +63,8 @@ router.post('/send', async (req, res) => {
       html: require('../services/emailTemplate')({
                 emailFrom, 
                 downloadLink: `${process.env.APP_BASE_URL}/files/${file.uuid}?source=email` ,
-                size: parseInt(file.size/1000) + ' KB',
-                expires: '24 hours'
+                size: parseInt(file.size/(1000*1024)) + 'MB',
+                expires: '24 Hours'
             })
     }).then(() => {
       return res.json({success: true});
