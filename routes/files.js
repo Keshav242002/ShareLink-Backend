@@ -21,12 +21,13 @@ let storage = multer.diskStorage({
 });
 
 
-let upload = multer({ storage, limits:{ fileSize: 1000000 * 100 }, }).single('myfile'); //100mb
+let upload = multer({ storage, limits:{ fileSize: 10000000 * 100 }, }).single('myfile'); //1000mb
 router.post('/', (req, res) => {
   upload(req, res, async (err) => {
     if (err) {
       return res.status(500).send({ error: err.message });
     }
+    // console.log(req.file);
         const file = new File({
             filename: req.file.filename,
             uuid: uuidv4(),
