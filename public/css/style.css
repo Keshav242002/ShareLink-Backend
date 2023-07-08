@@ -27,7 +27,7 @@ section.download {
     max-width: 90%;
     border-radius: 25px;
     box-shadow: 0px 20px 20px 0px #00000017;
-    padding:0 0 2rem 0;
+    padding:0 1rem 2rem 1rem;
     text-align: center;
 }
 .download__icon {
@@ -53,4 +53,45 @@ section.download {
 
   .send-btn-container a:hover {
       background: var(--dark-blue);
+  }
+  .footer-section {
+    width: 100%;
+    background-color: #00000054;
+    color: #FFF;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+    font-weight: 500;
+  }
+  
+  .footer-section .name {
+    font-size: 17px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .footer-section p {
+    padding: 0;
+    margin: 8px;
+  }
+  
+  .footer-section span {
+    color: #1e70c1;
+  }
+
+  @media screen and (max-width: 900px) {
+    .footer-section .name {
+      flex-direction: column;
+    }
+  
+    .footer-section p {
+      padding: 0;
+      margin: 4px;
+    }
+  
+    .show.toast {
+      transform: translate(50%, -55px);
+      right: 50%;
+    }
   }
